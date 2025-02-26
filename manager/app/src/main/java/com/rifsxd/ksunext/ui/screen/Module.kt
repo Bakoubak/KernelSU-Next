@@ -92,6 +92,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.rifsxd.ksunext.Natives
 import com.rifsxd.ksunext.R
+import com.rifsxd.ksunext.ksuApp
 import com.rifsxd.ksunext.ui.component.ConfirmResult
 import com.rifsxd.ksunext.ui.component.rememberConfirmDialog
 import com.rifsxd.ksunext.ui.component.rememberLoadingDialog
@@ -107,7 +108,6 @@ import com.rifsxd.ksunext.ui.util.uninstallModule
 import com.rifsxd.ksunext.ui.util.restoreModule
 import com.rifsxd.ksunext.ui.viewmodel.ModuleViewModel
 import com.rifsxd.ksunext.ui.webui.WebUIActivity
-import okhttp3.OkHttpClient
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Destination<RootGraph>
@@ -340,6 +340,16 @@ private fun ModuleList(
     val startDownloadingText = stringResource(R.string.module_start_downloading)
     val fetchChangeLogFailed = stringResource(R.string.module_changelog_failed)
 
+    val prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
+
+    val hasShownWarning = rememberSaveable { mutableStateOf(prefs.getBoolean("has_shown_warning", false)) }
+
+    var useOverlayFs by rememberSaveable {
+        mutableStateOf(
+            prefs.getBoolean("use_overlay_fs", false)
+        )
+    }
+
     val loadingDialog = rememberLoadingDialog()
     val confirmDialog = rememberConfirmDialog()
 
@@ -352,7 +362,7 @@ private fun ModuleList(
         val changelogResult = loadingDialog.withLoading {
             withContext(Dispatchers.IO) {
                 runCatching {
-                    OkHttpClient().newCall(
+                    ksuApp.okhttpClient.newCall(
                         okhttp3.Request.Builder().url(changelogUrl).build()
                     ).execute().body!!.string()
                 }
@@ -494,14 +504,14 @@ private fun ModuleList(
             },
         ) {
             when {
-                !viewModel.isOverlayAvailable -> {
+                useOverlayFs && !viewModel.isOverlayAvailable -> {
                     item {
                         Box(
                             modifier = Modifier.fillParentMaxSize(),
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
-                                stringResource(R.string.module_overlay_fs_not_available),
+                                text = stringResource(R.string.module_overlay_fs_not_available),
                                 textAlign = TextAlign.Center
                             )
                         }

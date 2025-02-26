@@ -5,7 +5,7 @@
     <string name="issue_report_body_2">Report it as soon as possible!</string>
     <string name="issue_report_github">Report on GitHub</string>
     <string name="issue_report_telegram">Contact via Telegram</string>
-    <string name="issue_report_github_link">https://github.com/rifsxd/KernelSU-Next/issues</string>
+    <string name="issue_report_github_link">https://github.com/KernelSU-Next/KernelSU-Next/issues</string>
     <string name="issue_report_telegram_link">https://t.me/ksunext</string>
     <string name="confirm">Confirm</string>
     <string name="app_name" translatable="false">KernelSU Next</string>
@@ -75,7 +75,7 @@
     <string name="home_magic_mount">Magic Mount</string>
     <string name="home_overlayfs_mount">OverlayFS</string>
     <string name="unavailable">Unavailable</string>
-    <string name="use_overlay_fs">Use OverlayFS (Beta)</string>
+    <string name="use_overlay_fs">Use OverlayFS</string>
     <string name="use_overlay_fs_summary">Toggle between using OverlayFS over Magic Mount for KernelSU Next\'s mount system.</string>
     <string name="reboot_required">Reboot required</string>
     <string name="reboot_message">The changes will take effect after the system restart. Do you want to reboot now?</string>
@@ -94,7 +94,7 @@
     <string name="cancel">Cancel</string>
     <string name="later">Later</string>
     <string name="home_next_kernelsu">🔥 Next build</string>
-    <string name="home_next_kernelsu_repo">https://github.com/rifsxd/KernelSU-Next</string>
+    <string name="home_next_kernelsu_repo">https://github.com/KernelSU-Next/KernelSU-Next</string>
     <string name="home_next_kernelsu_body">Next experimental branch. Check it out on GitHub!</string>
     <string name="home_experimental_kernelsu">⚠️ Experimental development warning!</string>
     <string name="home_experimental_kernelsu_repo">127.0.0.1</string>
@@ -134,7 +134,7 @@
     <string name="force_stop_app">Force stop</string>
     <string name="restart_app">Restart</string>
     <string name="failed_to_update_sepolicy">Failed to update SELinux rules for: %s</string>
-    <string name="su_not_allowed">Granting superuser is not allowed for: %s</string>
+    <string name="su_not_allowed">Granting superuser isn\'t allowed for: %s</string>
     <string name="module_changelog">Changelog</string>
     <string name="settings_profile_template">App Profile Template</string>
     <string name="settings_profile_template_summary">Manage local and online template of App Profile</string>
@@ -188,4 +188,6 @@
     <string name="save_log">Save logs</string>
     <string name="log_saved">Logs saved</string>
     <string name="send_log">Share logs</string>
+    <string name="settings_disable_su">Disable su compatibility</string>
+    <string name="settings_disable_su_summary">Temporarily disable the ability of any app to gain root privileges via the ⁠su command (existing root processes won\'t be affected).</string>
 </resources>
