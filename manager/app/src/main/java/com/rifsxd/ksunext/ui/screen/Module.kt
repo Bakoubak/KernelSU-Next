@@ -780,7 +780,7 @@ fun ModuleItem(
                     ) {
                         Icon(
                             modifier = Modifier.size(20.dp),
-                            imageVector = Icons.AutoMirrored.Outlined.Wysiwyg,
+                            imageVector = Icons.AutoMirrored.Outlined.Settings,
                             contentDescription = null
                         )
                         if (!module.hasActionScript && updateUrl.isEmpty()) {
