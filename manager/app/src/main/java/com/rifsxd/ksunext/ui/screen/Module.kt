@@ -761,7 +761,6 @@ fun ModuleItem(
                         if (!module.hasWebUi && updateUrl.isEmpty()) {
                             Text(
                                 modifier = Modifier.padding(start = 7.dp),
-                                text = stringResource(R.string.action),
                                 fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
                                 fontSize = MaterialTheme.typography.labelMedium.fontSize
                             )
@@ -789,7 +788,6 @@ fun ModuleItem(
                                 modifier = Modifier.padding(start = 7.dp),
                                 fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
                                 fontSize = MaterialTheme.typography.labelMedium.fontSize,
-                                text = stringResource(R.string.open)
                             )
                         }
                     }
@@ -860,7 +858,6 @@ fun ModuleItem(
                                 modifier = Modifier.padding(start = 7.dp),
                                 fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
                                 fontSize = MaterialTheme.typography.labelMedium.fontSize,
-                                text = stringResource(R.string.uninstall)
                             )
 		                }
                     }
