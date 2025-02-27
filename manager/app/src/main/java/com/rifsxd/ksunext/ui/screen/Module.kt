@@ -758,13 +758,6 @@ fun ModuleItem(
                             imageVector = Icons.Outlined.PlayArrow,
                             contentDescription = null
                         )
-                        if (!module.hasWebUi && updateUrl.isEmpty()) {
-                            Text(
-                                modifier = Modifier.padding(start = 7.dp),
-                                fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
-                                fontSize = MaterialTheme.typography.labelMedium.fontSize
-                            )
-                        }
                     }
 
                     Spacer(modifier = Modifier.weight(0.1f, true))
@@ -780,16 +773,9 @@ fun ModuleItem(
                     ) {
                         Icon(
                             modifier = Modifier.size(20.dp),
-                            imageVector = Icons.AutoMirrored.Outlined.Settings,
+                            imageVector = Icons.Outlined.Settings,
                             contentDescription = null
                         )
-                        if (!module.hasActionScript && updateUrl.isEmpty()) {
-                            Text(
-                                modifier = Modifier.padding(start = 7.dp),
-                                fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
-                                fontSize = MaterialTheme.typography.labelMedium.fontSize,
-                            )
-                        }
                     }
                 }
 
@@ -808,14 +794,6 @@ fun ModuleItem(
                             imageVector = Icons.Outlined.Download,
                             contentDescription = null
                         )
-                        if (!module.hasActionScript || !module.hasWebUi) {
-                            Text(
-                                modifier = Modifier.padding(start = 7.dp),
-                                fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
-                                fontSize = MaterialTheme.typography.labelMedium.fontSize,
-                                text = stringResource(R.string.module_update)
-                            )
-                        }
                     }
 
                     Spacer(modifier = Modifier.weight(0.1f, true))
@@ -853,13 +831,6 @@ fun ModuleItem(
                             imageVector = Icons.Outlined.Delete,
                             contentDescription = null
                         )
-                        if (!module.hasActionScript && !module.hasWebUi && updateUrl.isEmpty()) {
-                            Text(
-                                modifier = Modifier.padding(start = 7.dp),
-                                fontFamily = MaterialTheme.typography.labelMedium.fontFamily,
-                                fontSize = MaterialTheme.typography.labelMedium.fontSize,
-                            )
-		                }
                     }
                 }
             }
